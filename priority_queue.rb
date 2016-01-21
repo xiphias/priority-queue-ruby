@@ -9,9 +9,7 @@ class PriorityQueue
     return if i==0
     i2=i/2
     if @a[i]<@a[i2]
-      lastai=@a[i]
-      @a[i]=@a[i2]
-      @a[i2]=lastai
+      @a[i], @a[i2] = @a[i2], @a[i]
       up(i2)
     end
   end
@@ -34,9 +32,7 @@ class PriorityQueue
       mini=i*2+1
     end
     if mini>i
-      lastai=@a[i]
-      @a[i]=@a[mini]
-      @a[mini]=lastai
+      @a[i], @a[mini] = @a[mini], @a[i]
       down(mini)
     end
   end
